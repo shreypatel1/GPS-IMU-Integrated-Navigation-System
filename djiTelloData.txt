@@ -1,0 +1,860 @@
+shrey.patel@Shreys-MacBook-Air waypoint_Navigation % /usr/local/bin/python3 /Users/shrey.patel/mtre-projects/mtre-lab/waypoint_Navigation/djiTelloTest.py
+[INFO] tello.py - 130 - Tello instance was initialized. Host: '192.168.10.1'. Port: '8889'.
+[INFO] tello.py - 439 - Send command: 'command'
+[INFO] tello.py - 463 - Response command: 'ok'
+Height: 0
+Acceleration: 34.0 - 201.0 - -1373.0
+R-P-Y: 3 - 4 - -5
+Speed: 0 - 0 - -3
+Height: 0
+Acceleration: 132.0 - -112.0 - -1020.0
+R-P-Y: 7 - 5 - -14
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 137.0 - 594.0 - -779.0
+R-P-Y: -37 - 7 - -13
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 143.0 - 640.0 - -752.0
+R-P-Y: -37 - 8 - -13
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 142.0 - 611.0 - -782.0
+R-P-Y: -36 - 8 - -15
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 142.0 - 169.0 - -980.0
+R-P-Y: -9 - 7 - -16
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 60.0 - -18.0 - -987.0
+R-P-Y: 1 - 2 - -16
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -40.0 - 1.0 - -997.0
+R-P-Y: 0 - -2 - -18
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -49.0 - 26.0 - -993.0
+R-P-Y: 0 - -3 - -18
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -50.0 - -558.0 - -816.0
+R-P-Y: 33 - -2 - -17
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -20.0 - -520.0 - -846.0
+R-P-Y: 31 - -1 - -19
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -53.0 - -32.0 - -1006.0
+R-P-Y: 2 - -4 - -22
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 265.0 - 7.0 - -948.0
+R-P-Y: 0 - 17 - -23
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 471.0 - 4.0 - -886.0
+R-P-Y: 0 - 27 - -23
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 311.0 - 70.0 - -900.0
+R-P-Y: -3 - 20 - -24
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 155.0 - -12.0 - -989.0
+R-P-Y: 0 - 8 - -20
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -447.0 - -23.0 - -872.0
+R-P-Y: 0 - -26 - -19
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -480.0 - 49.0 - -870.0
+R-P-Y: -3 - -28 - -19
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 30.0 - 20.0 - -1000.0
+R-P-Y: -1 - 0 - -23
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -64.0 - 7.0 - -1005.0
+R-P-Y: 0 - -1 - -27
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -14.0 - -149.0 - -917.0
+R-P-Y: 2 - -3 - -74
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -11.0 - -37.0 - -1002.0
+R-P-Y: 2 - 0 - -99
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 74.0 - 104.0 - -986.0
+R-P-Y: -8 - 3 - -56
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 161.0 - 144.0 - -966.0
+R-P-Y: -8 - 11 - -8
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 185.0 - 122.0 - -981.0
+R-P-Y: -6 - 11 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 221.0 - 60.0 - -962.0
+R-P-Y: -4 - 12 - -19
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 207.0 - 67.0 - -980.0
+R-P-Y: -3 - 11 - -23
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 118.0 - 171.0 - -1022.0
+R-P-Y: -5 - 8 - -20
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 149.0 - 40.0 - -986.0
+R-P-Y: -3 - 6 - -24
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 47.0 - 120.0 - -994.0
+R-P-Y: -6 - 3 - -20
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 81.0 - 125.0 - -995.0
+R-P-Y: -7 - 4 - -22
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 124.0 - 24.0 - -994.0
+R-P-Y: -4 - 2 - -23
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 168.0 - 58.0 - -934.0
+R-P-Y: -11 - 4 - 9
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 313.0 - 11.0 - -1028.0
+R-P-Y: 0 - 17 - 123
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 180.0 - -90.0 - -1011.0
+R-P-Y: 4 - 3 - 139
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -13.0 - -8.0 - -984.0
+R-P-Y: 1 - 0 - 142
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: 6.0 - -3.0 - -995.0
+R-P-Y: 0 - 0 - 144
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -15.0 - 12.0 - -994.0
+R-P-Y: 0 - 0 - 149
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -16.0 - 22.0 - -1004.0
+R-P-Y: -1 - 0 - 150
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -11.0 - 42.0 - -1000.0
+R-P-Y: -2 - 0 - 139
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 9.0 - 8.0 - -1007.0
+R-P-Y: -1 - 0 - 130
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -8.0 - -15.0 - -998.0
+R-P-Y: 0 - -1 - 113
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 25.0 - -11.0 - -1019.0
+R-P-Y: -1 - 2 - 113
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -134.0 - -35.0 - -1041.0
+R-P-Y: -2 - -8 - 115
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -1.0 - 6.0 - -1000.0
+R-P-Y: 0 - 0 - 111
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 11.0 - -1001.0
+R-P-Y: 0 - 0 - 114
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -1.0 - 2.0 - -1002.0
+R-P-Y: 0 - 0 - 115
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - 7.0 - -1000.0
+R-P-Y: 0 - 0 - 116
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -1.0 - 5.0 - -997.0
+R-P-Y: 0 - 0 - 116
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 2.0 - -997.0
+R-P-Y: 0 - 0 - 117
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 4.0 - -1000.0
+R-P-Y: 0 - 0 - 117
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 7.0 - -999.0
+R-P-Y: 0 - 0 - 117
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 5.0 - -998.0
+R-P-Y: 0 - 0 - 117
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - -12.0 - -997.0
+R-P-Y: 0 - 0 - 109
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 0.0 - -995.0
+R-P-Y: 0 - 0 - 94
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -3.0 - 3.0 - -998.0
+R-P-Y: 0 - 0 - 79
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -63.0 - 57.0 - -995.0
+R-P-Y: 0 - 0 - 78
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -35.0 - -9.0 - -981.0
+R-P-Y: 0 - -1 - 48
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -21.0 - -17.0 - -995.0
+R-P-Y: 0 - 0 - 26
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - 19
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -998.0
+R-P-Y: 0 - 0 - 16
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -27.0 - 9.0 - -1003.0
+R-P-Y: 0 - 0 - 3
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -998.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -3.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -8.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -7.0 - -1.0 - -997.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - -1.0 - -1001.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -4.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - -1.0 - -999.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -9.0 - -2.0 - -1000.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -2.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 2.0 - -998.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 1.0 - -998.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -3.0 - 0.0 - -1002.0
+R-P-Y: 0 - 0 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 2.0 - -999.0
+R-P-Y: 0 - 0 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 0.0 - -997.0
+R-P-Y: 0 - 0 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 3.0 - -1000.0
+R-P-Y: 0 - 0 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 3.0 - -996.0
+R-P-Y: 0 - 0 - 0
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 8.0 - -7.0 - -973.0
+R-P-Y: 0 - 0 - -25
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -22.0 - 13.0 - -1006.0
+R-P-Y: 0 - 0 - -40
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 3.0 - -40.0 - -1008.0
+R-P-Y: 4 - 0 - -83
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 19.0 - 4.0 - -999.0
+R-P-Y: 0 - 0 - -90
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -2.0 - -3.0 - -1001.0
+R-P-Y: 0 - 0 - -90
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - -2.0 - -1002.0
+R-P-Y: 0 - 0 - -90
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -1.0 - -3.0 - -998.0
+R-P-Y: 0 - 0 - -90
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 267.0 - -85.0 - -1076.0
+R-P-Y: 0 - 5 - -171
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - -2.0 - -1003.0
+R-P-Y: 0 - 0 - -171
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 67.0 - 74.0 - -1018.0
+R-P-Y: 0 - 0 - 86
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 1.0 - 7.0 - -998.0
+R-P-Y: 0 - 0 - 86
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 14.0 - 1.0 - -1002.0
+R-P-Y: 0 - 0 - 86
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - -71.0 - -991.0
+R-P-Y: 0 - 0 - -7
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 0.0 - -1001.0
+R-P-Y: 0 - 0 - -6
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 2.0 - -1000.0
+R-P-Y: 0 - 0 - -2
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -4.0 - 2.0 - -1002.0
+R-P-Y: 0 - 0 - -2
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 5.0 - -998.0
+R-P-Y: 0 - 0 - -1
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 2.0 - -1001.0
+R-P-Y: 0 - 0 - -2
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -2.0 - 5.0 - -1001.0
+R-P-Y: 0 - 0 - -2
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -370.0 - 24.0 - -934.0
+R-P-Y: 0 - -19 - -5
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -156.0 - 9.0 - -974.0
+R-P-Y: 0 - -9 - -7
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 31.0 - 2.0 - -993.0
+R-P-Y: 0 - 0 - -4
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 429.0 - 1.0 - -888.0
+R-P-Y: 0 - 24 - -4
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 47.0 - 5.0 - -948.0
+R-P-Y: 0 - 0 - -5
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: -5.0 - 0.0 - -1003.0
+R-P-Y: 0 - 0 - -4
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 54.0 - 349.0 - -925.0
+R-P-Y: -20 - 3 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 57.0 - 273.0 - -967.0
+R-P-Y: -17 - 3 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 11.0 - 22.0 - -978.0
+R-P-Y: 3 - 0 - -11
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: -34.0 - -472.0 - -839.0
+R-P-Y: 30 - 0 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - -573.0 - -844.0
+R-P-Y: 33 - 0 - -13
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 1.0 - -32.0 - -1036.0
+R-P-Y: 0 - 4 - -27
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -28
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - -1.0 - -1002.0
+R-P-Y: 0 - 0 - -28
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -7.0 - -1.0 - -999.0
+R-P-Y: 0 - 0 - -28
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 0.0 - -999.0
+R-P-Y: 0 - 0 - -27
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 4.0 - -997.0
+R-P-Y: 0 - 0 - -26
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -47.0 - 56.0 - -1002.0
+R-P-Y: 0 - 0 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 2.0 - -1003.0
+R-P-Y: 0 - 0 - -7
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -2.0 - 233.0 - -980.0
+R-P-Y: -2 - 0 - 2
+Speed: 0 - 1 - -1
+Height: 0
+Acceleration: 64.0 - 78.0 - -1005.0
+R-P-Y: -2 - 3 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 70.0 - 14.0 - -973.0
+R-P-Y: 0 - 3 - -22
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 7.0 - -86.0 - -938.0
+R-P-Y: 0 - 1 - -29
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 90.0 - -69.0 - -931.0
+R-P-Y: 3 - 4 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 26.0 - -88.0 - -960.0
+R-P-Y: 7 - 2 - -3
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 104.0 - -148.0 - -918.0
+R-P-Y: 7 - 5 - -14
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 64.0 - -141.0 - -997.0
+R-P-Y: 8 - 4 - -13
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 30.0 - -127.0 - -992.0
+R-P-Y: 6 - 1 - -7
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 28.0 - -124.0 - -983.0
+R-P-Y: 0 - 2 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 79.0 - 55.0 - -976.0
+R-P-Y: 0 - 0 - -8
+Speed: 0 - 0 - -5
+Height: 0
+Acceleration: -27.0 - 4.0 - -836.0
+R-P-Y: 0 - -2 - -8
+Speed: 0 - 0 - 6
+Height: 0
+Acceleration: -71.0 - -21.0 - -1036.0
+R-P-Y: 0 - -3 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -23.0 - -30.0 - -1324.0
+R-P-Y: 0 - 2 - -12
+Speed: 0 - 0 - -4
+Height: 60
+Acceleration: -170.0 - 0.0 - -1002.0
+R-P-Y: 0 - -8 - -9
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: -162.0 - -46.0 - -991.0
+R-P-Y: 2 - -8 - -10
+Speed: 0 - 0 - 0
+Height: -50
+Acceleration: -73.0 - -30.0 - -1214.0
+R-P-Y: -2 - 0 - -9
+Speed: 0 - 0 - 3
+Height: 0
+Acceleration: -32.0 - -57.0 - -1076.0
+R-P-Y: 1 - 0 - -11
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 30.0 - -75.0 - -999.0
+R-P-Y: 4 - 3 - -6
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 31.0 - -62.0 - -995.0
+R-P-Y: 3 - 2 - -8
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -205.0 - -1.0 - -981.0
+R-P-Y: 1 - -9 - 19
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 21.0 - 4.0 - -920.0
+R-P-Y: -4 - 0 - 0
+Speed: -1 - 1 - -1
+Height: 70
+Acceleration: -69.0 - -142.0 - -1044.0
+R-P-Y: 7 - -3 - -12
+Speed: 0 - 0 - 0
+Height: -20
+Acceleration: -110.0 - -24.0 - -1246.0
+R-P-Y: 0 - -13 - -11
+Speed: -2 - 2 - 11
+Height: 0
+Acceleration: -5.0 - 1.0 - -997.0
+R-P-Y: 0 - 0 - -11
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: -6.0 - 1.0 - -995.0
+R-P-Y: 0 - 0 - -11
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -3.0 - 2.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 1.0 - -994.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -6.0 - 1.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 1.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -4.0 - 2.0 - -1001.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 2.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -1000.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 2.0 - -1000.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 0.0 - -999.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -1.0 - 8.0 - -997.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -7.0 - 1.0 - -1000.0
+R-P-Y: 0 - 0 - -10
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -48.0 - 124.0 - -933.0
+R-P-Y: -3 - -4 - -52
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 38.0 - 17.0 - -1000.0
+R-P-Y: 0 - 0 - 164
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - -1.0 - -999.0
+R-P-Y: 0 - 0 - 165
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 2.0 - 1.0 - -1002.0
+R-P-Y: 0 - 0 - 165
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 0.0 - -998.0
+R-P-Y: 0 - 0 - 169
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -32.0 - 12.0 - -1037.0
+R-P-Y: -1 - 0 - 170
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -22.0 - 25.0 - -1025.0
+R-P-Y: -2 - -1 - 169
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 38.0 - 75.0 - -992.0
+R-P-Y: -6 - 2 - 173
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 30.0 - 26.0 - -1015.0
+R-P-Y: -2 - 0 - 176
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 0.0 - 8.0 - -1006.0
+R-P-Y: 1 - 0 - 173
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -9.0 - -81.0 - -994.0
+R-P-Y: 3 - 0 - 169
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -25.0 - -79.0 - -1037.0
+R-P-Y: 1 - -1 - 167
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -99.0 - -87.0 - -1072.0
+R-P-Y: 4 - -3 - 148
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -22.0 - -114.0 - -1030.0
+R-P-Y: 5 - -2 - 149
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -62.0 - -72.0 - -1122.0
+R-P-Y: 0 - 0 - 159
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -21.0 - 97.0 - -1070.0
+R-P-Y: -9 - -2 - 172
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 135.0 - -36.0 - -852.0
+R-P-Y: -5 - 11 - -167
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: 3.0 - -29.0 - -990.0
+R-P-Y: 0 - 1 - 167
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -7.0 - 271.0 - -949.0
+R-P-Y: -14 - 2 - 178
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 46.0 - 292.0 - -980.0
+R-P-Y: -15 - 2 - 179
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 71.0 - 297.0 - -965.0
+R-P-Y: -15 - 3 - -177
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 63.0 - 163.0 - -1043.0
+R-P-Y: -8 - 1 - 178
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 72.0 - 0.0 - -1022.0
+R-P-Y: 0 - 2 - 168
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 29.0 - 7.0 - -997.0
+R-P-Y: 0 - 2 - 163
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 56.0 - 5.0 - -997.0
+R-P-Y: 1 - 1 - 169
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 33.0 - -54.0 - -1023.0
+R-P-Y: 1 - 2 - 167
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 24.0 - -13.0 - -1006.0
+R-P-Y: 0 - 1 - 167
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 16.0 - -12.0 - -1012.0
+R-P-Y: 1 - 0 - 166
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 108.0 - 30.0 - -1014.0
+R-P-Y: 0 - 0 - 166
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -16.0 - 19.0 - -1030.0
+R-P-Y: 0 - 0 - 163
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -30.0 - 59.0 - -1017.0
+R-P-Y: -4 - -1 - 168
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -9.0 - 26.0 - -1008.0
+R-P-Y: -1 - 0 - 167
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 74.0 - -997.0
+R-P-Y: -2 - 1 - 175
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -19.0 - 17.0 - -1004.0
+R-P-Y: -1 - 0 - 174
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 25.0 - -10.0 - -972.0
+R-P-Y: -1 - 2 - 175
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 53.0 - 26.0 - -1007.0
+R-P-Y: 1 - 2 - 173
+Speed: 1 - 0 - -1
+Height: 0
+Acceleration: 12.0 - 59.0 - -960.0
+R-P-Y: 0 - -1 - -179
+Speed: -1 - 0 - -2
+Height: 0
+Acceleration: 72.0 - -115.0 - -1001.0
+R-P-Y: 6 - 5 - 163
+Speed: -3 - 0 - 0
+Height: 0
+Acceleration: 25.0 - -147.0 - -999.0
+R-P-Y: 6 - 0 - 170
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 13.0 - -79.0 - -995.0
+R-P-Y: 2 - 2 - 170
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 107.0 - -80.0 - -980.0
+R-P-Y: 3 - 4 - 172
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 57.0 - 5.0 - -971.0
+R-P-Y: -1 - 3 - 170
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -91.0 - -47.0 - -989.0
+R-P-Y: 5 - -1 - 168
+Speed: 4 - -2 - 0
+Height: 0
+Acceleration: -28.0 - -1.0 - -989.0
+R-P-Y: -3 - -7 - 172
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -155.0 - 42.0 - -965.0
+R-P-Y: -2 - -8 - 178
+Speed: -9 - 2 - 0
+Height: 0
+Acceleration: -148.0 - -3.0 - -1006.0
+R-P-Y: 0 - -8 - 167
+Speed: -6 - 1 - 3
+Height: 0
+Acceleration: -158.0 - 50.0 - -982.0
+R-P-Y: -4 - -5 - 173
+Speed: 0 - 0 - 3
+Height: 0
+Acceleration: -61.0 - 186.0 - -947.0
+R-P-Y: -9 - -6 - 178
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -112.0 - 203.0 - -962.0
+R-P-Y: -11 - -7 - 162
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: -61.0 - 95.0 - -1011.0
+R-P-Y: 1 - -3 - 145
+Speed: 0 - 0 - -1
+Height: 0
+Acceleration: -15.0 - -329.0 - -922.0
+R-P-Y: 17 - -2 - 160
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: -117.0 - -54.0 - -956.0
+R-P-Y: 1 - -7 - 176
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -76.0 - 200.0 - -998.0
+R-P-Y: -15 - -5 - -179
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -62.0 - 173.0 - -952.0
+R-P-Y: -8 - -4 - 173
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: -5.0 - 35.0 - -1011.0
+R-P-Y: 10 - -1 - 146
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 38.0 - -337.0 - -855.0
+R-P-Y: 20 - 1 - 158
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 98.0 - 145.0 - -957.0
+R-P-Y: -22 - 5 - -175
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 174.0 - -56.0 - -1061.0
+R-P-Y: -1 - 4 - 170
+Speed: 0 - 0 - 1
+Height: 0
+Acceleration: 4.0 - 2.0 - -1000.0
+R-P-Y: 0 - 0 - 168
+Speed: 0 - 0 - 0
+Height: 0
+Acceleration: 4.0 - 2.0 - -1001.0
+R-P-Y: 0 - 0 - 168
+Speed: 0 - 0 - 0

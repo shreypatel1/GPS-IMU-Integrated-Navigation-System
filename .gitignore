@@ -1,0 +1,13 @@
+# Ignore .DS_Store files on macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+
+libraries/

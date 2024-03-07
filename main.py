@@ -13,6 +13,7 @@ waypoints = [
     [34.0675, -118.4505],  # Los Angeles
     [34.0522, -118.2437],  # Hollywood
     [34.0522, -118.2437],  # Santa Monica
+    [34.0522, -118.2437],  # Malibu
 ]
 
 

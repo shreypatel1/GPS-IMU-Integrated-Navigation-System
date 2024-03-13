@@ -4,30 +4,32 @@ import socket
 import pickle
 
 class RemoteGPSReciever:
-    def __init__(self, arduino_port='/dev/ttyACM0', baud_rate=9600):
-        self.gpsData = []
-        self.terminate_flag = False
+    def __init__(self, terminate_flag, remoteGPSData, host, port):
+        self.terminate_flag = terminate_flag
+        self.host = host
+        self.port = port
+        self.gpsData = remoteGPSData
 
     def main(self):
-        # Open the serial port
-        ser = serial.Serial(self.arduino_port, self.baud_rate)
+        print("*  Starting Remote GPS Reciever...")
 
-        host = '10.101.180.10'  # Client(drone)'s IP address
-        port = 4050  # Port for communication
+        # self.HOST = '10.101.180.10' # Client(drone)'s IP address
+        # self.PORT = 4050 # Port for communication
 
         # Create a socket object
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # connect to the server on local computer
         try:
-            s.connect((host, port))
+            s.connect((self.host, self.port))
 
             # recieve data from server
-            while not self.terminate_flag: # Check terminate flag
+            while not self.terminate_flag.value: # Check terminate flag
                 try:
                     data = s.recv(4096)
                     data = pickle.loads(data)
                     print(data)
+                    self.gpsData.append(data)
                 except:
                     # Handle errors or disconnects here
                     print("Connection lost.")
@@ -42,6 +44,8 @@ class RemoteGPSReciever:
         # Once the connection ends, stop/pause all navigation processes
         # and land the drone
         ##############################################################
+        
+        print("*  Remote GPS Reciever terminated!")
 
     def get_data(self):
         return self.gpsData
@@ -51,13 +55,18 @@ class RemoteGPSReciever:
             [0.0, 0.0, 0, 0],
         ]
 
-    def set_terminate_flag(self):
-        self.terminate_flag = True
-
+    # TESTING
     def test(self):
-        while True:
-            print("Logging gps data: " + str(self.gpsData))
-            time.sleep(2)
+        print("*  TEST: Starting Remote GPS Reciever...")
+
+        try:
+            while not self.terminate_flag.value:
+                #print("Recieving gps data: " + str(self.gpsData))
+                time.sleep(2)
+        except Exception as e:
+            print("Error in Remote GPS Reciever TEST: " + str(e))
+
+        print("*  TEST: Remote GPS Reciever terminated!")
 
 if __name__ == "__main__":
     gps_logger = RemoteGPSReciever()

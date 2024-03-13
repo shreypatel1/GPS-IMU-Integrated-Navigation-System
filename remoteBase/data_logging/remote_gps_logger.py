@@ -4,25 +4,29 @@ import socket
 import pickle
 
 class RemoteGPSLogger:
-    def __init__(self, arduino_port='/dev/ttyACM0', baud_rate=9600):
+    def __init__(self, terminate_flag, gpsData, arduino_port, baud_rate, host, port):
+        self.terminate_flag = terminate_flag
         self.arduino_port = arduino_port
         self.baud_rate = baud_rate
-        self.gpsData = []
-        self.terminate_flag = False
+        self.host = host
+        self.port = port
+        self.gpsData = gpsData
 
     def main(self):
+        print("*  Starting Remote GPS Logger...")
+
         # Open the serial port
         ser = serial.Serial(self.arduino_port, self.baud_rate)
 
-        host = '10.101.180.10'  # server(remoteBase)'s IP address
-        port = 4050  # Port for communication
+        #self.HOST = '10.101.180.10' # Server(remoteBase)'s IP address
+        #self.PORT = 4050  # Port for communication
 
         # Create a socket object
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # bind the server to the host and port
-        s.bind((host, port))
-        s.listen(1)
+        s.bind((self.host, self.port))
+        s.listen(2)
 
         # accept connection
         print("Waiting for connection...")
@@ -30,7 +34,7 @@ class RemoteGPSLogger:
         print("Connected to: " + str(addr))
 
         # get data from arduino serial
-        while not self.terminate_flag: # Check terminate flag
+        while not self.terminate_flag.value: # Check terminate flag
             data = ser.readline().decode('utf-8')
             data = data.split(',')
             latitude = float(data[0])
@@ -51,6 +55,8 @@ class RemoteGPSLogger:
         conn.close()
         s.close()
 
+        print("*  Remote GPS Logger terminated!")
+
     def get_data(self):
         return self.gpsData
 
@@ -59,13 +65,18 @@ class RemoteGPSLogger:
             [0.0, 0.0, 0, 0],
         ]
 
-    def set_terminate_flag(self):
-        self.terminate_flag = True
-
+    # TESTING
     def test(self):
-        while True:
-            print("Logging gps data: " + str(self.gpsData))
-            time.sleep(2)
+        print("*  TEST: Starting Remote GPS Logger...")
+
+        try:
+            while not self.terminate_flag.value:
+                print("Logging gps data: " + str(self.gpsData))
+                time.sleep(2)
+        except Exception as e:
+            print("Error in Remote GPS Logger TEST: " + str(e))
+
+        print("*  TEST: Remote GPS Logger terminated!")
 
 if __name__ == "__main__":
     gps_logger = RemoteGPSLogger()

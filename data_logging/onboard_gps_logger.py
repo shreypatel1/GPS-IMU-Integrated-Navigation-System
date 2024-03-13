@@ -2,29 +2,36 @@ import serial
 import time
 
 class OnboardGPSLogger:
-    def __init__(self, arduino_port='/dev/ttyACM0', baud_rate=9600):
+    def __init__(self, terminate_flag, onboardGPSData, arduino_port, baud_rate):
+        self.terminate_flag = terminate_flag
         self.arduino_port = arduino_port
         self.baud_rate = baud_rate
-        self.gpsData = []
-        self.terminate_flag = False
+        self.gpsData = onboardGPSData
 
     def main(self):
-        # Open the serial port
-        ser = serial.Serial(self.arduino_port, self.baud_rate)
+        print("*  Starting Onboard GPS Logger...")
 
-        # get data from arduino serial
-        while not self.terminate_flag: # Check terminate flag
-            data = ser.readline().decode('utf-8')
-            data = data.split(',')
-            latitude = float(data[0])
-            longitude = float(data[1])
-            timestamp = int(data[2])
-            satellites = int(data[3])
-            data = [longitude, latitude, timestamp, satellites]
-            print(data)
+        try:
+            # Open the serial port
+            ser = serial.Serial(self.arduino_port, self.baud_rate)
 
-            # log the new gps data
-            self.gpsData.append(data)
+            # get data from arduino serial
+            while not self.terminate_flag.value: # Check terminate flag
+                data = ser.readline().decode('utf-8')
+                data = data.split(',')
+                latitude = float(data[0])
+                longitude = float(data[1])
+                timestamp = int(data[2])
+                satellites = int(data[3])
+                data = [longitude, latitude, timestamp, satellites]
+                print(data)
+
+                # log the new gps data
+                self.gpsData.append(data)
+        except Exception as e:
+            print("Error in Onboard GPS Logger: " + str(e))
+        
+        print("*  Onboard GPS Logger terminated!")
 
     def get_data(self):
         return self.gpsData
@@ -34,13 +41,18 @@ class OnboardGPSLogger:
             [0.0, 0.0, 0, 0],
         ]
 
-    def set_terminate_flag(self):
-        self.terminate_flag = True
-
+    # TESTING
     def test(self):
-        while True:
-            print("Logging gps data: " + str(self.gpsData))
-            time.sleep(2)
+        print("*  TEST: Starting Onboard GPS Logger...")
+
+        try:
+            while not self.terminate_flag.value:
+                #print("Logging gps data: " + str(self.gpsData))
+                time.sleep(2)
+        except Exception as e:
+            print("Error in Onboard GPS Logger TEST: " + str(e))
+
+        print("*  TEST: Onboard GPS Logger terminated!")
 
 if __name__ == "__main__":
     gps_logger = OnboardGPSLogger()

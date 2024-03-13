@@ -1,42 +1,51 @@
-from remoteBase.data_logging.remote_gps_logger import RemoteGPSLogger
 import multiprocessing
 import time
-import signal
+import keyboard
+import threading
+from data_logging.remote_gps_logger import RemoteGPSLogger
 
 # Global flag to indicate whether to terminate processes
-terminate_flag = False
+terminate_flag = None
 
 
 # Handle Ctrl+C
-def signal_handler(sig, frame):
+def termination_listener():
+    global terminate_flag
+    keyboard.wait('esc')
     print('Termination signal received! Terminating processes...')
-    terminate_flag = True
+    terminate_flag.value = True
 
 
 def main():
     global terminate_flag
 
-    # Register the signal handler
-    signal.signal(signal.SIGINT, signal_handler)
-    signal.signal(signal.SIGTERM, signal_handler)
+    # Create a manager for shared variables
+    manager = multiprocessing.Manager()
+    terminate_flag = manager.Value('b', False)
+    gpsData = manager.list([[0.0, 0.0, 0, 0]])
 
-    print("Starting Remote Base")
+    # Start the termination listener
+    termination_thread = threading.Thread(target=termination_listener)
+    termination_thread.start()
+
+    print("Starting Remote Base...")
 
     # Start the Remote logger processes
-    remote_gps_logger = RemoteGPSLogger()
+    remote_gps_logger = RemoteGPSLogger(terminate_flag, gpsData, '/dev/ttyACM0', 9600, '10.101.180.10', 4050) # This logs the remote GPS data
 
     gps_process = multiprocessing.Process(target=remote_gps_logger.test)
     gps_process.start()
 
+
     # Wait for the termination flag
-    while not terminate_flag:
+    while not terminate_flag.value:
         # -------------------------------------
         time.sleep(1)
         # -------------------------------------
     
 
-    # Set the terminate flag for each process
-    remote_gps_logger.set_terminate_flag()
+    # Wait for the processes to terminate
+    gps_process.join()
 
     print("Remote Base terminated!")
 

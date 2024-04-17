@@ -12,5 +12,5 @@ __pycache__/
 
 libraries/
 
-csv_files/
+csv_files/*
 data_sets/

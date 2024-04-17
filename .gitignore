@@ -11,3 +11,6 @@ __pycache__/
 .vscode/
 
 libraries/
+
+csv_files/
+data_sets/

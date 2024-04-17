@@ -11,15 +11,15 @@ current_yaw = 0.0
 target_yaw = 90
 output_values = []
 error_values = []
-integral_values = []
-derivative_values = []
-battery_percentage = []
+#integral_values = []
+#derivative_values = []
 yaw_values = {'current_yaw': [], 'target_yaw': []}
 time_values = []
+cost_values = []
 
 # MPC Parameters
 N = 8  # Prediction horizon
-dt = 0.1  # Time step
+dt = 0.09  # Time step
 
 def termination_listener():
     global terminate_flag
@@ -27,12 +27,19 @@ def termination_listener():
     print('Termination signal received! Terminating processes...')
     terminate_flag = True
 
+current_time = 0
+last_timestamp = time.time()
 def cost_function(u):
+    global last_timestamp, current_time
     # Cost function to minimize
     cost = 0
     for i in range(N):
         error = target_yaw - (current_yaw + u[i])
         cost += error ** 2
+    temp = time.time()
+    current_time += temp - last_timestamp
+    last_timestamp = temp
+    cost_values.append([current_time, cost])
     return cost
 
 def estimate_pose(tello):
@@ -47,9 +54,7 @@ def plot_data():
         # Plot for output, error, and integral
         plt.subplot(411)
         plt.plot(time_values, error_values, label='Error')
-        plt.plot(time_values, integral_values, label='Integral')
-        plt.plot(time_values, derivative_values, label='Derivative')
-        plt.title('PID Components')
+        plt.title('Error')
         plt.xlabel('Time (s)')
         plt.ylabel('Value')
         plt.legend()
@@ -73,17 +78,17 @@ def plot_data():
 
         # Plot for battery level (bar graph)
         plt.subplot(414)
-        plt.plot(time_values, battery_percentage)
-        plt.title('Battery Percentage')
+        plt.plot([data[0] for data in cost_values], [data[1] for data in cost_values], label='Cost')
+        plt.title('Cost Function')
         plt.xlabel('Time (s)')
-        plt.ylabel('Percentage')
+        plt.ylabel('Cost')
 
         plt.tight_layout()
         plt.show()
         plt.pause(0.1)
 
 def main():
-    global terminate_flag, current_yaw
+    global terminate_flag, current_yaw, current_time
 
     # Start the termination listener
     termination_thread = threading.Thread(target=termination_listener)
@@ -120,11 +125,10 @@ def main():
             time_values.append(data_time)
             output_values.append(yaw_velocity)
             error_values.append(target_yaw - current_yaw)
-            integral_values.append(np.sum(error_values) * dt)
-            derivative_values.append((error_values[-1] - error_values[-2]) / dt if len(error_values) > 1 else 0)
+            
             yaw_values['current_yaw'].append(current_yaw)
             yaw_values['target_yaw'].append(target_yaw)
-            battery_percentage.append(tello.get_battery())
+
 
             # Send the velocity values to the drone
             tello.send_rc_control(0, 0, 0, yaw_velocity)

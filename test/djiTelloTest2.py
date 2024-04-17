@@ -45,8 +45,13 @@ def main():
         dt = current_time - previous_time
         previous_time = current_time
 
-        acceleration_x = tello.get_acceleration_x()
-        acceleration_y = tello.get_acceleration_y()
+        yaw = tello.get_yaw()
+
+        acceleration_xi = tello.get_acceleration_x()
+        acceleration_yi = tello.get_acceleration_y()
+
+        acceleration_x = acceleration_xi * math.cos(math.radians(yaw)) - acceleration_yi * math.sin(math.radians(yaw))
+        acceleration_y = acceleration_xi * math.sin(math.radians(yaw)) + acceleration_yi * math.cos(math.radians(yaw))
 
         print('Original Acceleration: ' + str(acceleration_x) + ' | ' + str(acceleration_y))
 
@@ -60,8 +65,11 @@ def main():
         #acceleration_x = math.trunc(acceleration_x)
         #acceleration_y = math.trunc(acceleration_y)
 
-        x_velocity += acceleration_x * dt
-        y_velocity += acceleration_y * dt
+        #x_velocity += acceleration_x * dt
+        #y_velocity += acceleration_y * dt
+
+        x_velocity += math.trunc(-acceleration_x * dt)
+        y_velocity += math.trunc(acceleration_y * dt)
 
         x_position += x_velocity * dt
         y_position += y_velocity * dt
@@ -69,10 +77,10 @@ def main():
         #print('Height: ' + str(tello.get_height()))
         #print('State: ' + str(tello.get_current_state()))
         print("Battery: " + str(tello.get_battery()) + "%")
-        #print('Acceleration: ' + str(acceleration_x) + ' | ' + str(acceleration_y))
+        print('Acceleration: ' + str(acceleration_x) + ' | ' + str(acceleration_y))
         #print('Filtered Acceleration: ' + str(filtered_acceleration_x) + ' | ' + str(filtered_acceleration_y))
-        #print('Velocity: ' + str(x_velocity) + ' | ' + str(y_velocity))
-        #print('Position: ' + str(x_position) + ' | ' + str(y_position))
+        print('Velocity: ' + str(x_velocity) + ' | ' + str(y_velocity))
+        print('Position: ' + str(x_position) + ' | ' + str(y_position))
         print('R-P-Y: ' + str(tello.get_roll()) + ' | ' + str(tello.get_pitch()) + ' | ' + str(tello.get_yaw()))
         #print('Speed: ' + str(tello.get_speed_x()) + ' | ' + str(tello.get_speed_y()) + ' | ' + str(tello.get_speed_z()))
 

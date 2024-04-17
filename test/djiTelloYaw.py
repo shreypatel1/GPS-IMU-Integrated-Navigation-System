@@ -113,7 +113,7 @@ def main():
     # Define PID parameters
     kp_yaw, ki_yaw, kd_yaw = 0.35, 0.15, 0.18
     prev_error_yaw, integral_yaw = 0.0, 0.0
-    target_yaw = 90
+    target_yaw = 0
 
 
     print(tello.get_battery())

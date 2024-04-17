@@ -21,9 +21,10 @@ class OnboardGPSLogger:
                 data = data.split(',')
                 latitude = float(data[0])
                 longitude = float(data[1])
-                timestamp = int(data[2])
+                timestamp = time.time()
                 satellites = int(data[3])
-                data = [longitude, latitude, timestamp, satellites]
+                hdop = float(data[4])
+                data = [longitude, latitude, timestamp, satellites, hdop]
                 print(data)
 
                 # log the new gps data

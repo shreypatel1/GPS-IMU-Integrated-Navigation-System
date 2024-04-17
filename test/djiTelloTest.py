@@ -2,6 +2,7 @@ import time
 import djitellopy
 import threading
 import keyboard
+import math
 
 terminate_flag = False
 
@@ -63,17 +64,20 @@ def estimate_pose(tello, dt):
     acceleration[1] -= acceleration_bias_y
 
     # Update the velocity
-    current_velocity[0] += acceleration[0] * dt
-    current_velocity[1] += acceleration[1] * dt
+    #current_velocity[0] += acceleration[0] * dt
+    #current_velocity[1] += acceleration[1] * dt
+    current_velocity[0] += math.trunc(acceleration[0] * dt)
+    current_velocity[1] += math.trunc(acceleration[1] * dt)
 
     # Update the position
     current_x += current_velocity[0] * dt
     current_y += current_velocity[1] * dt
 
     print('Position: ' + str(current_x) + ' | ' + str(current_y))
-    print('Acceleration: ' + str(acceleration[0]) + ' | ' + str(acceleration[1]))
+    #print('Acceleration: ' + str(acceleration[0]) + ' | ' + str(acceleration[1]))
     print('Velocity: ' + str(current_velocity))
-    print('Dt: ' + str(dt))
+    print('R-P-Y: ' + str(tello.get_roll()) + ' | ' + str(tello.get_pitch()) + ' | ' + str(tello.get_yaw()))
+    #print('Dt: ' + str(dt))
 
 
 

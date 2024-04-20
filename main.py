@@ -15,7 +15,7 @@ from control_system.drone_yaw import YawControl
 import matplotlib.pyplot as plt
 
 # Define the directory to save CSV files
-CSV_DIR = "csv_files"
+CSV_DIR = "last_flight_data"
 
 # Create the directory if it does not exist
 os.makedirs(CSV_DIR, exist_ok=True)

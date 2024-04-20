@@ -12,9 +12,9 @@ remoteGPSData = [-84.521035, 33.937093]
 
 
 # Load data
-imuData = pd.read_csv('data_sets/csv_files7/imuData.csv', header=None).values.tolist()
-onboardGPSData = pd.read_csv('data_sets/csv_files7/onboardGPSData.csv', header=None).values.tolist()
-odometryData = pd.read_csv('data_sets/csv_files7/odometryData.csv', header=None).values.tolist()
+imuData = pd.read_csv('data_sets/csv_files5/imuData.csv', header=None).values.tolist()
+onboardGPSData = pd.read_csv('data_sets/csv_files5/onboardGPSData.csv', header=None).values.tolist()
+odometryData = pd.read_csv('data_sets/csv_files5/odometryData.csv', header=None).values.tolist()
 
 
 degree_constant = (2 * math.pi * 6371000)/360
@@ -33,6 +33,9 @@ def save_list_as_csv(filename, data):
         writer = csv.writer(csvfile)
         writer.writerows(data)
 
+
+#------------------------------------------------------------------------------------------------
+# Find coordinates for each data point (NOT WORKING FOR NOW)
 def offset_coordinate(dx, dy):
     global onboardGPSData
     """
@@ -69,10 +72,10 @@ for data in odometryData:
     odomCoord.append(offset_coordinate(data[0], -data[1]))
 
 # Save the offset coordinates as CSV files
-save_list_as_csv("imu.csv", imuCoord)
-save_list_as_csv("odometry.csv", odomCoord)
-save_list_as_csv("onboardGPS.csv", ([data[1], data[0]] for data in onboardGPSData))
-
+#save_list_as_csv("imu.csv", imuCoord)
+#save_list_as_csv("odometry.csv", odomCoord)
+#save_list_as_csv("onboardGPS.csv", ([data[1], data[0]] for data in onboardGPSData))
+#------------------------------------------------------------------------------------------------
 
 weight_data = []
 previous_time = odometryData[1][3]
@@ -86,12 +89,14 @@ for data in odometryData:
 #print(current_time)
 
 
-fig, axs = plt.subplots(3, 2, figsize=(8, 10))
+#fig, axs = plt.subplots(3, 2, figsize=(8, 10))
 
-axs = axs.flatten()
+#axs = axs.flatten()
+
+plt.figure(figsize=(10, 8))
 
 # Location (x-y) graph
-plt.subplot(311)
+plt.subplot(211)
 plt.plot([-data[0] for data in imuData], [-data[1] for data in imuData], label='IMU Data')
 plt.plot([((data[0] * degree_constant * math.cos((data[1] * math.pi)/180)) - origin[0]) for data in onboardGPSData], [-((data[1] * degree_constant) - origin[1]) for data in onboardGPSData], label='Onboard GPS Data')
 plt.plot([data[0] for data in odometryData], [-data[1] for data in odometryData], label='Odometry Data')
@@ -104,24 +109,24 @@ plt.grid(True)
 
 # GPS weight graph
 #plt.subplot(321)
-axs[2].plot([data[0] for data in weight_data], [data[1] for data in weight_data], label='GPS Weight')
+#axs[2].plot([data[0] for data in weight_data], [data[1] for data in weight_data], label='GPS Weight')
 #plt.plot([data[0] for data in weight_data], [data[2] for data in weight_data], label='IMU Weight')
-axs[2].set_xlabel('Time (s)')
-axs[2].set_ylabel('Weight')
-axs[2].set_title('GPS Weightage')
-axs[2].legend()
-axs[2].grid(True)
+##axs[2].set_xlabel('Time (s)')
+#axs[2].set_ylabel('Weight')
+#axs[2].set_title('GPS Weightage')
+#axs[2].legend()
+#axs[2].grid(True)
 
 
 # IMU weight graph
 #plt.subplot(322)
 #plt.plot([data[0] for data in weight_data], [data[1] for data in weight_data], label='GPS Weight')
-axs[3].plot([data[0] for data in weight_data], [data[2] for data in weight_data], label='IMU Weight', color='orange')
-axs[3].set_xlabel('Time (s)')
-axs[3].set_ylabel('Weight')
-axs[3].set_title('IMU Weightage')
-axs[3].legend()
-axs[3].grid(True)
+#axs[3].plot([data[0] for data in weight_data], [data[2] for data in weight_data], label='IMU Weight', color='orange')
+#axs[3].set_xlabel('Time (s)')
+#axs[3].set_ylabel('Weight')
+#axs[3].set_title('IMU Weightage')
+#axs[3].legend()
+#axs[3].grid(True)
 
 
 plt.tight_layout()

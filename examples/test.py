@@ -12,9 +12,10 @@ remoteGPSData = [-84.521035, 33.937093]
 
 
 # Load data
-imuData = pd.read_csv('data_sets/csv_files5/imuData.csv', header=None).values.tolist()
-onboardGPSData = pd.read_csv('data_sets/csv_files5/onboardGPSData.csv', header=None).values.tolist()
-odometryData = pd.read_csv('data_sets/csv_files5/odometryData.csv', header=None).values.tolist()
+code = '9'
+imuData = pd.read_csv('data_sets/csv_files{0}/imuData.csv'.format(code), header=None).values.tolist()
+onboardGPSData = pd.read_csv('data_sets/csv_files{0}/onboardGPSData.csv'.format(code), header=None).values.tolist()
+odometryData = pd.read_csv('data_sets/csv_files{0}/odometryData.csv'.format(code), header=None).values.tolist()
 
 
 degree_constant = (2 * math.pi * 6371000)/360
@@ -97,9 +98,9 @@ plt.figure(figsize=(10, 8))
 
 # Location (x-y) graph
 plt.subplot(211)
-plt.plot([-data[0] for data in imuData], [-data[1] for data in imuData], label='IMU Data')
-plt.plot([((data[0] * degree_constant * math.cos((data[1] * math.pi)/180)) - origin[0]) for data in onboardGPSData], [-((data[1] * degree_constant) - origin[1]) for data in onboardGPSData], label='Onboard GPS Data')
-plt.plot([data[0] for data in odometryData], [-data[1] for data in odometryData], label='Odometry Data')
+plt.plot([data[0] for data in imuData], [data[1] for data in imuData], label='IMU Data')
+plt.plot([((data[0] * degree_constant * math.cos((data[1] * math.pi)/180)) - origin[0]) for data in onboardGPSData], [((data[1] * degree_constant) - origin[1]) for data in onboardGPSData], label='Onboard GPS Data')
+plt.plot([data[0] for data in odometryData], [data[1] for data in odometryData], label='Odometry Data')
 plt.plot(target_loc[0], target_loc[1], 'ro', label='Target')
 plt.xlabel('X Position (m)')
 plt.ylabel('Y Position (m)')

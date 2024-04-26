@@ -38,7 +38,7 @@ class YawControl:
         displacement = [target[0] - current[0], target[1] - current[1]]
 
         # Calculate the target yaw in degrees
-        self.target_yaw = math.degrees(math.atan2(displacement[1], -displacement[0]))
+        self.target_yaw = math.floor(-math.degrees(math.atan2(displacement[1], displacement[0])))
 
         self.current_yaw = self.imuData[-1][2]
 
@@ -74,13 +74,6 @@ class YawControl:
 
                     # Append the data
                     self.yawData.append([self.current_yaw, self.target_yaw, yaw_velocity, data_time])
-                    #self.yaw_values['current_yaw'].append(self.current_yaw)
-                    #self.yaw_values['target_yaw'].append(self.target_yaw)
-                    #self.output_values.append(yaw_velocity)
-                    #self.time_values.append(data_time)
-
-                    # Update Yaw velocity values
-                    #self.tello.value.send_rc_control(0, 0, 0, yaw_velocity)
 
                     # Sleep for a short period of time
                     time.sleep(0.05)

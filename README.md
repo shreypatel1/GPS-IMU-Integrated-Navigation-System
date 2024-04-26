@@ -57,8 +57,8 @@ Use the `test.py` file in the `examples` directory to test the data collection a
 <div style="display: flex; flex-direction: column;">
     <img src="images/odometry_graph.png" alt="Location Graph" width="100%" height="auto" style="margin-bottom: 10px;"/>
     <div style="display: flex; flex-direction: row;">
-        <img src="images/yaw_graph.png" alt="Yaw Graph" width="60%" height="auto"/>
-        <img src="images/weightage_graph.png" alt="Weightage Graph" width="40%" height="auto"/>
+        <img src="images/yaw_graph.png" alt="Yaw Graph" width="57%" height="auto"/>
+        <img src="images/weightage_graph.png" alt="Weightage Graph" width="39%" height="auto"/>
     </div>
 </div>
 

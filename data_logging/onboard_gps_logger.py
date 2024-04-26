@@ -1,4 +1,4 @@
-import serial
+from serial import Serial
 import time
 
 class OnboardGPSLogger:
@@ -13,7 +13,7 @@ class OnboardGPSLogger:
 
         try:
             # Open the serial port
-            ser = serial.Serial(self.arduino_port, self.baud_rate)
+            ser = Serial(self.arduino_port, self.baud_rate)
 
             # get data from arduino serial
             while not self.terminate_flag.value: # Check terminate flag
@@ -30,7 +30,7 @@ class OnboardGPSLogger:
                 # log the new gps data
                 self.gpsData.append(data)
         except Exception as e:
-            print("Error in Onboard GPS Logger: " + str(e))
+            print("Error in Onboard GPS Logger: " + str(e.with_traceback()))
         
         print("*  Onboard GPS Logger terminated!")
 

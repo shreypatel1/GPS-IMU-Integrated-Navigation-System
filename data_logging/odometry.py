@@ -47,7 +47,7 @@ class Odometry:
                     # Calculate GPS weight - some equation
                     satellite_weight = current_gps_data[3] * 0.5
                     if(current_gps_data[4] == 0):
-                        current_gps_data = 200
+                        current_gps_data[4] = 200
                     hdop_weight = 2/(current_gps_data[4] / 100)
                     print('GPS Weight: ' + str(satellite_weight) + ' | ' + str(hdop_weight))
                     gps_weight = satellite_weight + hdop_weight
@@ -56,20 +56,20 @@ class Odometry:
                     imu_weight = 2
 
                     # Calculate weighted average of GPS and IMU calculated position
-                    x = (gps_weight / (gps_weight + imu_weight)) * gpsPos[0] + (imu_weight / (gps_weight + imu_weight)) * imuPos[0]
-                    y = (gps_weight / (gps_weight + imu_weight)) * gpsPos[1] + (imu_weight / (gps_weight + imu_weight)) * imuPos[1]
+                    x = ((gps_weight / (gps_weight + imu_weight)) * gpsPos[0]) + ((imu_weight / (gps_weight + imu_weight)) * imuPos[0])
+                    y = ((gps_weight / (gps_weight + imu_weight)) * gpsPos[1]) + ((imu_weight / (gps_weight + imu_weight)) * imuPos[1])
 
                     print('Odometry:' + str([x, y]))
-                    self.odometryData.append([-x, y, current_imu_data[2], time.time(), origin, gps_weight, imu_weight])
+                    self.odometryData.append([x, y, current_imu_data[2], time.time(), origin, gps_weight, imu_weight])
 
 
                     # Update IMU calculated position
-                    loc = [-x, y]
+                    loc = [x, y]
                     self.update_imuPos.append(loc)
 
                     # Update last_time_entry
                     last_time_entry = current_gps_data[2]
-                    time.sleep(0.2)
+                time.sleep(0.05)
 
         except Exception as e:
             print(time.time())

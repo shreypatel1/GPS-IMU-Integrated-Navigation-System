@@ -50,26 +50,34 @@ def estimate_pose(tello, dt):
     global terminate_flag
     global current_x, current_y, current_velocity, acceleration_bias_x, acceleration_bias_y, bias_alpha
 
-    # Create a variable to store the acceleration readings
-    acceleration = [0.0, 0.0]
+    yaw = tello.get_yaw()
 
-    # Update the acceleration readings
-    acceleration[0] = tello.get_acceleration_x()
-    acceleration[1] = tello.get_acceleration_y()
+    acceleration_xi = tello.get_acceleration_x() / 10
+    acceleration_yi = tello.get_acceleration_y() / 10
 
-    # Apply a bias filter to the acceleration readings
-    acceleration_bias_x = bias_alpha * acceleration_bias_x + (1 - bias_alpha) * acceleration[0]
-    acceleration_bias_y = bias_alpha * acceleration_bias_y + (1 - bias_alpha) * acceleration[1]
-    acceleration[0] -= acceleration_bias_x
-    acceleration[1] -= acceleration_bias_y
+    acceleration_x = acceleration_xi * math.cos(math.radians(yaw)) - acceleration_yi * math.sin(math.radians(yaw))
+    acceleration_y = acceleration_xi * math.sin(math.radians(yaw)) + acceleration_yi * math.cos(math.radians(yaw))
 
-    # Update the velocity
-    #current_velocity[0] += acceleration[0] * dt
-    #current_velocity[1] += acceleration[1] * dt
-    current_velocity[0] += math.trunc(acceleration[0] * dt)
-    current_velocity[1] += math.trunc(acceleration[1] * dt)
+    print('Original Acceleration: ' + str(acceleration_x) + ' | ' + str(acceleration_y))
 
-    # Update the position
+    acceleration_bias_x = bias_alpha * acceleration_bias_x + (1 - bias_alpha) * acceleration_x
+    acceleration_bias_y = bias_alpha * acceleration_bias_y + (1 - bias_alpha) * acceleration_y
+    acceleration_x -= acceleration_bias_x
+    acceleration_y -= acceleration_bias_y
+    
+    #print('Second Acceleration: ' + str(acceleration_x) + ' | ' + str(acceleration_y))
+
+    #acceleration_x = math.trunc(acceleration_x)
+    #acceleration_y = math.trunc(acceleration_y)
+
+    #current_velocity[0] += math.trunc(-acceleration_x * dt)
+    #current_velocity[1] += math.trunc(acceleration_y * dt)
+    current_velocity[0] += -acceleration_x * dt
+    current_velocity[1] += acceleration_y * dt
+
+    current_velocity[0] = math.trunc(current_velocity[0] * 100) / 100
+    current_velocity[1] = math.trunc(current_velocity[1] * 100) / 100
+
     current_x += current_velocity[0] * dt
     current_y += current_velocity[1] * dt
 
@@ -101,7 +109,7 @@ def main():
     prev_error_x, integral_x = 0.0, 0.0
     prev_error_y, integral_y = 0.0, 0.0
 
-    target_x, target_y = 0.0, 1.0
+    target_x, target_y = 0.0, -1.0
 
 
     tello.takeoff()
@@ -110,6 +118,7 @@ def main():
     # Main loop
     try:
         previous_time = time.time()
+        count = 0
         while not terminate_flag:
             # Calculate the time elapsed
             current_time = time.time()
@@ -130,9 +139,14 @@ def main():
             print('Output: ' + str(left_right_velocity) + ' | ' + str(forward_backward_velocity))
 
             # Send the velocity values to the drone
-            tello.send_rc_control(left_right_velocity, forward_backward_velocity, 0, 0)
+            tello.send_rc_control(-forward_backward_velocity, left_right_velocity, 0, 0)
+            #if(count < 10):
+                #tello.send_rc_control(100, 0, 0, 0)
+            #else:
+                #tello.send_rc_control(0, 0, 0, 0)
 
             # Sleep for a short period of time
+            count += 1
             time.sleep(0.1)         
     except Exception as e:
         print(e)

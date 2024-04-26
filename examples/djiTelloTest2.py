@@ -47,8 +47,8 @@ def main():
 
         yaw = tello.get_yaw()
 
-        acceleration_xi = tello.get_acceleration_x()
-        acceleration_yi = tello.get_acceleration_y()
+        acceleration_xi = tello.get_acceleration_x() / 10
+        acceleration_yi = tello.get_acceleration_y() / 10
 
         acceleration_x = acceleration_xi * math.cos(math.radians(yaw)) - acceleration_yi * math.sin(math.radians(yaw))
         acceleration_y = acceleration_xi * math.sin(math.radians(yaw)) + acceleration_yi * math.cos(math.radians(yaw))
@@ -65,11 +65,13 @@ def main():
         #acceleration_x = math.trunc(acceleration_x)
         #acceleration_y = math.trunc(acceleration_y)
 
-        #x_velocity += acceleration_x * dt
-        #y_velocity += acceleration_y * dt
+        #x_velocity += math.trunc(-acceleration_x * dt)
+        #y_velocity += math.trunc(acceleration_y * dt)
+        x_velocity += -acceleration_x * dt
+        y_velocity += acceleration_y * dt
 
-        x_velocity += math.trunc(-acceleration_x * dt)
-        y_velocity += math.trunc(acceleration_y * dt)
+        x_velocity = math.trunc(x_velocity * 100) / 100
+        y_velocity = math.trunc(y_velocity * 100) / 100
 
         x_position += x_velocity * dt
         y_position += y_velocity * dt

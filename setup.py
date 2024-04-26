@@ -13,7 +13,7 @@ setup(
         'pandas',
         'geopy',
         'matplotlib',
-        'serial',
+        'pyserial',
         # Add any other dependencies here
     ],
     entry_points={

@@ -7,6 +7,7 @@ import time
 import djitellopy
 import math
 import numpy as np
+import serial
 from scipy.optimize import minimize
 from data_logging.onboard_gps_logger import OnboardGPSLogger
 #from data_logging.remote_gps_reciever import RemoteGPSReciever
@@ -44,8 +45,8 @@ def estimate_pose(dt, tello, imuData):
     yaw = tello.get_yaw()
 
     # Update the acceleration readings
-    acceleration_x = tello.get_acceleration_x()
-    acceleration_y = tello.get_acceleration_y()
+    acceleration_x = tello.get_acceleration_x() / 10
+    acceleration_y = tello.get_acceleration_y() / 10
 
     acceleration[0] = acceleration_x * math.cos(math.radians(yaw)) - acceleration_y * math.sin(math.radians(yaw))
     acceleration[1] = acceleration_x * math.sin(math.radians(yaw)) + acceleration_y * math.cos(math.radians(yaw))
@@ -57,10 +58,13 @@ def estimate_pose(dt, tello, imuData):
     acceleration[1] -= acceleration_bias[1]
 
     # Update the velocity
-    #self.velocity[0] += -acceleration[0] * dt
-    #self.velocity[1] += -acceleration[1] * dt
-    velocity[0] += math.trunc(-acceleration[0] * dt)
-    velocity[1] += math.trunc(acceleration[1] * dt)
+    velocity[0] += -acceleration[0] * dt
+    velocity[1] += acceleration[1] * dt
+    #velocity[0] += math.trunc(-acceleration[0] * dt)
+    #velocity[1] += math.trunc(acceleration[1] * dt)
+
+    velocity[0] = math.trunc(velocity[0] * 100) / 100
+    velocity[1] = math.trunc(velocity[1] * 100) / 100
 
     # Update the position
     position[0] += velocity[0] * dt

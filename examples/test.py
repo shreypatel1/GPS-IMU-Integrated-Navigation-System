@@ -12,7 +12,7 @@ remoteGPSData = [-84.521035, 33.937093]
 
 
 # Load data
-code = '9'
+code = '8'
 imuData = pd.read_csv('data_sets/csv_files{0}/imuData.csv'.format(code), header=None).values.tolist()
 onboardGPSData = pd.read_csv('data_sets/csv_files{0}/onboardGPSData.csv'.format(code), header=None).values.tolist()
 odometryData = pd.read_csv('data_sets/csv_files{0}/odometryData.csv'.format(code), header=None).values.tolist()

@@ -125,7 +125,7 @@ odometryData = None
 N = 10  # Prediction horizon
 dt = 1  # Time step
 remoteGPSData = [
-    [-84.521035, 33.937093],
+    [-84.521035, 33.937093], # lon, lat
 ]
 current = 0.0
 target = 0.0

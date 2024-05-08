@@ -21,6 +21,11 @@ pip install <package>
 
 
 ## Running the project:
+
+### Target Location:
+Target location for the navigation algorithm can be changed from the `remoteGPSData` variable in the `main.py` file.
+
+### Arduino port
 Before running the project, ensure that the Arduino Uno with BN-180 gps module is connected to the computer and recieving data. Aditionally, verify that the `arduino_pot`value in the `steup.py` file is set to the correct port value for the Arduino Uno.
 
 Finding the port:
